@@ -1,7 +1,11 @@
 import numpy as np
 
-array = np.array([i for i in range(1, 6)])
+array = np.array([1, 2, 3, 4, 5])
 print(array)
-print(array.dtype)
-sum_array = sum(i for i in np.nditer(array))
-print(sum_array / array.size)
+print(array.size)
+print(array.sum())
+print(array.sum() / array.size)
+print(array.min())
+print(array.max())
+print(array + 10)
+print(array * 3)
