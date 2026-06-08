@@ -1,9 +1,13 @@
 import numpy as np
 
-array = np.array([[78, 92, 85], [60, 55, 70], [95, 88, 91], [40, 72, 65]])
+array = np.array([[120, 150, 90], [80, 200, 110], [300, 100, 250]])
 
-avar_grades = array.mean(axis=1)
-one_job = array.mean(axis=0)
-print(np.where(avar_grades > 80))
-new_array = np.where(array < 60, 60, array)
-print(new_array)
+
+print(array.argmax())
+print(array.argmin())
+max_sale = array.max()
+print(max_sale)
+min_sale = array.min()
+print(min_sale)
+print(array.argmax(axis=1))
+print(array.argmin(axis=0))
