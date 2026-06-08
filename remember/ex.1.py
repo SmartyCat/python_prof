@@ -1,11 +1,7 @@
 import numpy as np
 
-array = np.array([1, 2, 3, 4, 5])
-print(array)
-print(array.size)
-print(array.sum())
-print(array.sum() / array.size)
-print(array.min())
-print(array.max())
-print(array + 10)
-print(array * 3)
+array = np.arange(10,100,10)
+array = array.reshape(3,3)
+print(array.sum(axis=0))
+print(array.sum(axis=1))
+print(array[array > 50])
