@@ -1,7 +1,8 @@
 import numpy as np
 
-array = np.arange(10,100,10)
-array = array.reshape(3,3)
-print(array.sum(axis=0))
-print(array.sum(axis=1))
-print(array[array > 50])
+array = np.array([[5, 12, 7], [18, 3, 25], [9, 30, 1]])
+
+print(array[array > 10])
+array[array < 10] = 0
+print(array.max(axis=1))
+print(array.max(axis=0))
