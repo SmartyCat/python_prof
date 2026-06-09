@@ -1,20 +1,14 @@
 import numpy as np
 
-temps = np.array(
-    [
-        [18, 21, 19, 22, 20],
-        [25, 27, 26, 24, 28],
-        [15, 17, 16, 18, 19],
-        [30, 32, 31, 29, 33],
-    ]
+results = np.array(
+    [[12, 15, 14, 16], [18, 17, 19, 20], [10, 11, 13, 12], [21, 22, 20, 23]]
 )
-
-avar_temp = temps.mean(axis=1)
-print(avar_temp)
-most_hottest_city = np.where(avar_temp == avar_temp.max())
-print(most_hottest_city[0])
-hotest_day = temps.argmax(axis=1)
-print(hotest_day)
-new_array = np.where(temps < 20, 20, temps)
-print(new_array)
-print(temps[temps > temps.mean()])
+avar_every_athlet = results.mean(axis=1)
+print(avar_every_athlet)
+max_index = np.where(results.mean(axis=1) == avar_every_athlet.max())
+print(*max_index)
+best_chance = results.argmax(axis=1)
+print(best_chance)
+new_results = np.where(results < results.mean(), 0, results)
+print(new_results)
+print(results[(results > 15) & (results < 22)])
