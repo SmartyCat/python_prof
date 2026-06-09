@@ -1,19 +1,18 @@
 import numpy as np
 
-scores = np.array(
+sales = np.array(
     [
-        [72, 85, 90, 88],
-        [60, 58, 65, 70],
-        [95, 92, 96, 98],
-        [40, 55, 50, 45],
-        [80, 82, 84, 86],
+        [120, 150, 130, 170],
+        [90, 110, 105, 100],
+        [200, 180, 220, 210],
+        [70, 85, 80, 75],
+        [160, 155, 165, 170],
     ]
 )
-
-middle_score = scores.mean(axis=1)
-print(middle_score)
-print(np.where(scores.mean(axis=1) > scores.mean())[0])
-print(scores.argmax(axis=0))
-new_array = np.where(scores < 60, 60, scores)
+middle_sale = sales.mean(axis=1)
+print(middle_sale)
+print(middle_sale.argmax())
+print(sales.argmax(axis=1))
+new_array = np.where(sales < sales.mean(),0,sales)
 print(new_array)
-print(scores[(scores >= 80) & (scores <= 95)])
+print(sales[(sales > sales.mean()) & (sales < 200)])
