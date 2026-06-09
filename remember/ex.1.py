@@ -1,13 +1,20 @@
 import numpy as np
 
-array = np.array([[120, 150, 90], [80, 200, 110], [300, 100, 250]])
+temps = np.array(
+    [
+        [18, 21, 19, 22, 20],
+        [25, 27, 26, 24, 28],
+        [15, 17, 16, 18, 19],
+        [30, 32, 31, 29, 33],
+    ]
+)
 
-
-print(array.argmax())
-print(array.argmin())
-max_sale = array.max()
-print(max_sale)
-min_sale = array.min()
-print(min_sale)
-print(array.argmax(axis=1))
-print(array.argmin(axis=0))
+avar_temp = temps.mean(axis=1)
+print(avar_temp)
+most_hottest_city = np.where(avar_temp == avar_temp.max())
+print(most_hottest_city[0])
+hotest_day = temps.argmax(axis=1)
+print(hotest_day)
+new_array = np.where(temps < 20, 20, temps)
+print(new_array)
+print(temps[temps > temps.mean()])
