@@ -37,8 +37,5 @@ times_of_purchases = [
     datetime(2017, 10, 4, 16, 46, 59),
     datetime(2017, 10, 4, 12, 26, 6),
 ]
-result = sum(
-    1 if d.hour < 12 or d.hour == 12 and d.minute > 0 else -1
-    for d in times_of_purchases
-)
+result = sum(1 if d.hour < 12 else -1 for d in times_of_purchases)
 print("До полудня" if result > -1 else "После полудня")
